@@ -1,3 +1,4 @@
+import Modelo.Entrenador;
 import Modelo.Unidad.*;
 import org.junit.jupiter.api.Test;
 
