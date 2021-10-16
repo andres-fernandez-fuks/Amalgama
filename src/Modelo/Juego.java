@@ -1,5 +1,7 @@
 package Modelo;
 
+import Modelo.Ejercito.Ejercito;
+
 import java.util.ArrayList;
 
 public class Juego {
