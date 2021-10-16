@@ -1,5 +1,7 @@
 package Modelo.Unidad;
 
 public abstract class Unidad {
-    public abstract int fuerza();
+    protected int fuerza;
+    public int fuerza() { return fuerza; }
+    public abstract void entrenar();
 }

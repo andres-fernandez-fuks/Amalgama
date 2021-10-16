@@ -1,7 +1,6 @@
 package Modelo.Unidad;
 
 public class UnidadArquero extends Unidad {
-    public int fuerza() {
-        return 10;
-    }
+    public UnidadArquero() { fuerza = 10; }
+    public void entrenar() { fuerza += 7; }
 }
