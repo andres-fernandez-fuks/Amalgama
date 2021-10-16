@@ -4,6 +4,6 @@ import org.junit.jupiter.api.Test;
 public class JuegoTest {
     @Test
     public void laCantidadDeEjercitosDeUnJuegoRecienCreadoDeberiaSer0() {
-        assert(new Juego().cantidadDeJugadores() == 0);
+        assert(new Juego().cantidadDeEjercitos() == 0);
     }
 }
