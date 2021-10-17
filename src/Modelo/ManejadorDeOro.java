@@ -1,3 +1,5 @@
+// Clase utilizada por Ejercito para delegar verificaciones relacionadas con la disponibilidad de oro
+
 package Modelo;
 
 import Modelo.Excepciones.OroInsuficienteException;

@@ -1,3 +1,5 @@
+// Clase utilizada por Ejercito para delegar la eliminación de unidades, que no es tan trivial.
+
 package Modelo;
 import Modelo.Unidad.*;
 

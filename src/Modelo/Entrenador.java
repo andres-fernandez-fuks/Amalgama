@@ -1,3 +1,5 @@
+// Clase utilizada por Ejercito para delegar el entrenamiento de unidades.
+
 package Modelo;
 
 import Modelo.Excepciones.CantidadDeUnidadesInsuficienteException;

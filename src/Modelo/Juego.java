@@ -1,3 +1,5 @@
+// Clase que modela una partida con múltiples ejércitos, con las limitaciones del ejercicio
+
 package Modelo;
 
 import Modelo.Ejercito.*;

@@ -1,3 +1,5 @@
+// Clase abstracta que modela una unidad, con su correspondiente fuerza y métodos
+
 package Modelo.Unidad;
 
 public abstract class Unidad implements Comparable<Unidad> {

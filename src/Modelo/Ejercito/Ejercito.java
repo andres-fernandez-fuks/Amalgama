@@ -1,3 +1,5 @@
+// Clase abstracta que modela un ejército, con sus unidades correspondientes y la posibilidad de entrenarlas y transformarlas
+
 package Modelo.Ejercito;
 
 import Modelo.Eliminador;
@@ -11,7 +13,6 @@ import Modelo.Unidad.UnidadCaballero;
 import Modelo.Unidad.UnidadPiquero;
 
 import java.util.ArrayList;
-
 
 public abstract class Ejercito {
     protected ManejadorDeOro manejador_de_oro = new ManejadorDeOro();

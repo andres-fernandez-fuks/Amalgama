@@ -1,3 +1,5 @@
+// Clase utilizada por Ejercito para delegar la transformación de unidades.
+
 package Modelo;
 import Modelo.Excepciones.CantidadDeUnidadesInsuficienteException;
 import Modelo.Unidad.*;
