@@ -11,7 +11,7 @@ public class ManejadorDeOroTest {
     private ManejadorDeOro manejador;
 
     @BeforeEach
-    public void resetearManejador() {
+    public void setearManejador() {
         manejador = new ManejadorDeOro();
     }
 
