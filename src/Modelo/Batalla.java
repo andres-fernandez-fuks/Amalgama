@@ -9,7 +9,7 @@ public class Batalla {
         if (fuerza_ejercito1 > fuerza_ejercito2) {
             resolverGanadorPerdedor(ejercito1, ejercito2);
         } else if (fuerza_ejercito1 == fuerza_ejercito2) {
-            //resolverEmpate(ejercito1, ejercito2);
+            resolverEmpate(ejercito1, ejercito2);
         } else {
             resolverGanadorPerdedor(ejercito2, ejercito1);
         }
@@ -18,5 +18,10 @@ public class Batalla {
     public void resolverGanadorPerdedor(Ejercito ejercito_ganador, Ejercito ejercito_perdedor) {
         ejercito_ganador.afrontarVictoria();
         ejercito_perdedor.afrontarDerrota();
+    }
+
+    public void resolverEmpate(Ejercito ejercito1, Ejercito ejercito2) {
+        ejercito1.afrontarEmpate();
+        ejercito2.afrontarEmpate();
     }
 }

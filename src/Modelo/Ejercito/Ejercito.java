@@ -61,8 +61,13 @@ public abstract class Ejercito {
     }
 
     public void afrontarDerrota() {
-        eliminador.eliminarUnidades();
+        eliminador.eliminarUnidades(2);
     }
+
+    public void afrontarEmpate() {
+        eliminador.eliminarUnidades(1);
+    }
+
     public void entrenarPiqueros(int cantidad) {
         entrenador.entrenarUnidades((ArrayList<Unidad>)(ArrayList<?>) piqueros, cantidad);
     }

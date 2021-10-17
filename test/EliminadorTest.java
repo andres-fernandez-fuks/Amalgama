@@ -13,7 +13,7 @@ public class EliminadorTest {
         ArrayList<UnidadPiquero> piqueros = new ArrayList<>();
         ArrayList<UnidadArquero> arqueros = new ArrayList<>();
         Eliminador eliminador = new Eliminador(piqueros, arqueros, caballeros);
-        eliminador.eliminarUnidades();
+        eliminador.eliminarUnidades(2);
         assert(caballeros.size() == 0);
     }
 
@@ -24,7 +24,7 @@ public class EliminadorTest {
         ArrayList<UnidadPiquero> piqueros = new ArrayList<>();
         ArrayList<UnidadCaballero> caballeros = new ArrayList<>();
         Eliminador eliminador = new Eliminador(piqueros, arqueros, caballeros);
-        eliminador.eliminarUnidades();
+        eliminador.eliminarUnidades(2);
         assert(arqueros.size() == 0);
     }
 
@@ -35,7 +35,7 @@ public class EliminadorTest {
         ArrayList<UnidadCaballero> caballeros = new ArrayList<>();
         ArrayList<UnidadArquero> arqueros = new ArrayList<>();
         Eliminador eliminador = new Eliminador(piqueros, arqueros, caballeros);
-        eliminador.eliminarUnidades();
+        eliminador.eliminarUnidades(2);
         assert(piqueros.size() == 0);
     }
 }
