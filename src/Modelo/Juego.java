@@ -31,4 +31,41 @@ public class Juego {
     public Ejercito getEjercitoById(int id_ejercito) {
         return ejercitos.get(id_ejercito);
     }
+
+    public void entrenarPiquerosParaEjercito(int id_ejercito, int cantidad) {
+        Ejercito ejercito = ejercitos.get(id_ejercito);
+        ejercito.entrenarPiqueros(cantidad);
+    }
+
+    public void entrenarArquerosParaEjercito(int id_ejercito, int cantidad) {
+        Ejercito ejercito = ejercitos.get(id_ejercito);
+        ejercito.entrenarArqueros(cantidad);
+    }
+
+    public void entrenarCaballerosParaEjercito(int id_ejercito, int cantidad) {
+        Ejercito ejercito = ejercitos.get(id_ejercito);
+        ejercito.entrenarCaballeros(cantidad);
+    }
+
+    public void transformarPiquerosParaEjercito(int id_ejercito, int cantidad) {
+        Ejercito ejercito = ejercitos.get(id_ejercito);
+        ejercito.transformarPiqueros(cantidad);
+    }
+
+    public void transformarArquerosParaEjercito(int id_ejercito, int cantidad) {
+        Ejercito ejercito = ejercitos.get(id_ejercito);
+        ejercito.transformarArqueros(cantidad);
+    }
+
+    public void transformarCaballerosParaEjercito(int id_ejercito, int cantidad) {
+        Ejercito ejercito = ejercitos.get(id_ejercito);
+        ejercito.transformarCaballeros(cantidad);
+    }
+
+    public void enfrentarEjercitos(int id_ejercito1, int id_ejercito2) {
+        Ejercito ejercito1 = ejercitos.get(id_ejercito1);
+        Ejercito ejercito2 = ejercitos.get(id_ejercito2);
+        new Batalla(ejercito1, ejercito2);
+    }
+
 }
