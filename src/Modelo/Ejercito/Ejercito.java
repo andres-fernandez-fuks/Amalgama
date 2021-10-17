@@ -1,5 +1,6 @@
 package Modelo.Ejercito;
 
+import Modelo.Eliminador;
 import Modelo.Entrenador;
 import Modelo.Excepciones.TipoDeUnidadIntransformableException;
 import Modelo.Transformador;
@@ -9,9 +10,7 @@ import Modelo.Unidad.UnidadCaballero;
 import Modelo.Unidad.UnidadPiquero;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import static java.lang.Math.min;
 
 public abstract class Ejercito {
     protected int oro_disponible = 1000;
@@ -20,6 +19,7 @@ public abstract class Ejercito {
     protected ArrayList<UnidadCaballero> caballeros  = new ArrayList<>();
     protected Entrenador entrenador = new Entrenador();
     protected Transformador transformador = new Transformador();
+    protected Eliminador eliminador = new Eliminador(piqueros, arqueros, caballeros);
 
     public int cantidadDeOroDisponible() { return oro_disponible;}
 
@@ -61,39 +61,8 @@ public abstract class Ejercito {
     }
 
     public void afrontarDerrota() {
-        int unidades_a_eliminar = 2;
-        int caballeros_eliminados = eliminarCaballeros();
-        unidades_a_eliminar -= caballeros_eliminados;
-        if (unidades_a_eliminar == 0) return;
-        int arqueros_eliminados = eliminarArqueros(unidades_a_eliminar);
-        unidades_a_eliminar -= arqueros_eliminados;
-        if (unidades_a_eliminar == 0) return;
-        eliminarPiqueros(unidades_a_eliminar);
+        eliminador.eliminarUnidades();
     }
-
-    private void eliminarPiqueros(int unidades_a_eliminar) {
-        int cant_iteraciones = min(unidades_a_eliminar, piqueros.size());
-        for (int i = 0; i < cant_iteraciones; ++i) {
-            piqueros.remove(0);
-        }
-    }
-
-    private int eliminarArqueros(int unidades_a_eliminar) {
-        int cant_iteraciones = min(unidades_a_eliminar, arqueros.size());
-        for (int i = 0; i < cant_iteraciones; ++i) {
-            arqueros.remove(0);
-        }
-        return cant_iteraciones;
-    }
-
-    private int eliminarCaballeros() {
-        int cant_iteraciones = min(2, caballeros.size());
-        for (int i = 0; i < cant_iteraciones; ++i) {
-            caballeros.remove(0);
-        }
-        return cant_iteraciones;
-    }
-
     public void entrenarPiqueros(int cantidad) {
         entrenador.entrenarUnidades((ArrayList<Unidad>)(ArrayList<?>) piqueros, cantidad);
     }
