@@ -4,6 +4,5 @@ public class UnidadPiquero extends Unidad {
     public UnidadPiquero() { fuerza = 5; }
     public void entrenar() {
         fuerza += 3;
-        esta_entrenado = true;
     }
 }
