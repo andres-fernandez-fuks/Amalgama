@@ -22,6 +22,18 @@ public abstract class Ejercito {
     protected Transformador transformador = new Transformador();
     protected Eliminador eliminador = new Eliminador(piqueros, arqueros, caballeros);
 
+    protected static int contador_ids;
+    protected int id;
+
+    public Ejercito() {
+        contador_ids++;
+        id = contador_ids;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public int oroDisponible() { return manejador_de_oro.oroDisponible();}
 
     protected void agregarPiqueros(int cantidad) {

@@ -3,7 +3,6 @@ package Modelo;
 import Modelo.Ejercito.Ejercito;
 
 public class Batalla {
-    private int ganador;
     public Batalla(Ejercito ejercito1, Ejercito ejercito2) {
         int fuerza_ejercito1 = ejercito1.fuerza();
         int fuerza_ejercito2 = ejercito2.fuerza();

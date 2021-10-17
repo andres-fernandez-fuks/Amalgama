@@ -8,7 +8,7 @@ public class Juego {
     public int cantidadDeEjercitos() {return ejercitos.size(); }
 
     public int agregarEjercito(Ejercito nuevo_ejercito) {
-        int id_ejercito = cantidadDeEjercitos()+1;
+        int id_ejercito = nuevo_ejercito.getId();
         ejercitos.put(id_ejercito, nuevo_ejercito);
         return id_ejercito;
     }
