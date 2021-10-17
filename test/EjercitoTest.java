@@ -1,4 +1,5 @@
 import Modelo.Ejercito.*;
+import Modelo.Excepciones.TipoDeUnidadIntransformableException;
 import Modelo.Unidad.UnidadCaballero;
 import org.junit.jupiter.api.Test;
 
@@ -89,6 +90,35 @@ public class EjercitoTest {
         int fuerza_inicial = ejercito.fuerza();
         ejercito.entrenarCaballeros(10);
         assert(ejercito.fuerza() == fuerza_inicial + 100);
+    }
+
+    @Test
+    public void siSeTransforman5PiquerosSeTiene5PiquerosMenosy5ArquerosMas() {
+        Ejercito ejercito = new EjercitoIngles();
+        int cant_inicial_de_piqueros = ejercito.cantidadDePiqueros();
+        int cant_inicial_de_arqueros = ejercito.cantidadDeArqueros();
+        ejercito.transformarPiqueros(5);
+        assert(ejercito.cantidadDePiqueros() == cant_inicial_de_piqueros - 5);
+        assert(ejercito.cantidadDeArqueros() == cant_inicial_de_arqueros + 5);
+    }
+
+    @Test
+    public void siSeTransforman5ArquerosSeTiene5ArquerosMenosy5CaballerosMas() {
+        Ejercito ejercito = new EjercitoIngles();
+        int cant_inicial_de_arqueros = ejercito.cantidadDePiqueros();
+        int cant_inicial_de_caballeros = ejercito.cantidadDeArqueros();
+        ejercito.transformarArqueros(5);
+        assert(ejercito.cantidadDeArqueros() == cant_inicial_de_arqueros - 5);
+        assert(ejercito.cantidadDeCaballeros() == cant_inicial_de_caballeros + 5);
+    }
+
+    @Test
+    public void siSeTransformanCaballerosSeObtieneUnError() {
+        Ejercito ejercito = new EjercitoIngles();
+        try { ejercito.transformarCaballeros(10); }
+        catch(Exception e) {
+            assert(e.getClass() == TipoDeUnidadIntransformableException.class);
+        }
     }
 
 }

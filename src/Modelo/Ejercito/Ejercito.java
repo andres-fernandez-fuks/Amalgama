@@ -1,6 +1,7 @@
 package Modelo.Ejercito;
 
 import Modelo.Entrenador;
+import Modelo.Excepciones.TipoDeUnidadIntransformableException;
 import Modelo.Transformador;
 import Modelo.Unidad.Unidad;
 import Modelo.Unidad.UnidadArquero;
@@ -18,6 +19,7 @@ public abstract class Ejercito {
     protected ArrayList<UnidadArquero> arqueros  = new ArrayList<>();
     protected ArrayList<UnidadCaballero> caballeros  = new ArrayList<>();
     protected Entrenador entrenador = new Entrenador();
+    protected Transformador transformador = new Transformador();
 
     public int cantidadDeOroDisponible() { return oro_disponible;}
 
@@ -102,6 +104,18 @@ public abstract class Ejercito {
 
     public void entrenarCaballeros(int cantidad) {
         entrenador.entrenarUnidades((ArrayList<Unidad>)(ArrayList<?>) caballeros, cantidad);
+    }
+
+    public void transformarPiqueros(int cantidad) {
+        transformador.transformarPiqueros(piqueros, arqueros, cantidad);
+    }
+
+    public void transformarArqueros(int cantidad) {
+        transformador.transformarArqueros(arqueros, caballeros, cantidad);
+    }
+
+    public void transformarCaballeros(int cantidad) {
+        throw new TipoDeUnidadIntransformableException();
     }
 
     public int cantidadDePiqueros() { return piqueros.size();}
