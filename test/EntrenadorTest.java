@@ -1,3 +1,4 @@
+import Modelo.Ejercito.*;
 import Modelo.Entrenador;
 import Modelo.Unidad.*;
 import org.junit.jupiter.api.Test;
@@ -24,4 +25,5 @@ public class EntrenadorTest {
         entrenador.entrenar(caballero);
         assert(caballero.fuerza() == 30);
     }
+
 }

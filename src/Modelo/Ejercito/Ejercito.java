@@ -1,21 +1,23 @@
 package Modelo.Ejercito;
 
+import Modelo.Entrenador;
+import Modelo.Transformador;
 import Modelo.Unidad.Unidad;
 import Modelo.Unidad.UnidadArquero;
 import Modelo.Unidad.UnidadCaballero;
 import Modelo.Unidad.UnidadPiquero;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static java.lang.Math.min;
 
 public abstract class Ejercito {
     protected int oro_disponible = 1000;
-    protected List<UnidadPiquero> piqueros = new ArrayList<UnidadPiquero>();
-    protected List<UnidadArquero> arqueros  = new ArrayList<UnidadArquero>();
-    protected List<UnidadCaballero> caballeros  = new ArrayList<UnidadCaballero>();
+    protected ArrayList<UnidadPiquero> piqueros = new ArrayList<>();
+    protected ArrayList<UnidadArquero> arqueros  = new ArrayList<>();
+    protected ArrayList<UnidadCaballero> caballeros  = new ArrayList<>();
+    protected Entrenador entrenador = new Entrenador();
 
     public int cantidadDeOroDisponible() { return oro_disponible;}
 
@@ -88,6 +90,18 @@ public abstract class Ejercito {
             caballeros.remove(0);
         }
         return cant_iteraciones;
+    }
+
+    public void entrenarPiqueros(int cantidad) {
+        entrenador.entrenarUnidades((ArrayList<Unidad>)(ArrayList<?>) piqueros, cantidad);
+    }
+
+    public void entrenarArqueros(int cantidad) {
+        entrenador.entrenarUnidades((ArrayList<Unidad>)(ArrayList<?>) arqueros, cantidad);
+    }
+
+    public void entrenarCaballeros(int cantidad) {
+        entrenador.entrenarUnidades((ArrayList<Unidad>)(ArrayList<?>) caballeros, cantidad);
     }
 
     public int cantidadDePiqueros() { return piqueros.size();}

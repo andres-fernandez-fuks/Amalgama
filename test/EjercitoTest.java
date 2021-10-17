@@ -1,4 +1,5 @@
 import Modelo.Ejercito.*;
+import Modelo.Unidad.UnidadCaballero;
 import org.junit.jupiter.api.Test;
 
 public class EjercitoTest {
@@ -64,6 +65,30 @@ public class EjercitoTest {
     @Test
     public void elOroDisponibleDeUnEjercitoInglesRecienCreadoDeberiaSer1000() {
         assert(ejercito_ingles.cantidadDeOroDisponible() == 1000);
+    }
+
+    @Test
+    public void siSeEntrenan10PiquerosLaFuerzaDelEjercitoAumentaEn30() {
+        Ejercito ejercito = new EjercitoIngles();
+        int fuerza_inicial = ejercito.fuerza();
+        ejercito.entrenarPiqueros(10);
+        assert(ejercito.fuerza() == fuerza_inicial + 30);
+    }
+
+    @Test
+    public void siSeEntrenan10ArquerosLaFuerzaDelEjercitoAumentaEn70() {
+        Ejercito ejercito = new EjercitoIngles();
+        int fuerza_inicial = ejercito.fuerza();
+        ejercito.entrenarArqueros(10);
+        assert(ejercito.fuerza() == fuerza_inicial + 70);
+    }
+
+    @Test
+    public void siSeEntrenan10CaballerosLaFuerzaDelEjercitoAumentaEn100() {
+        Ejercito ejercito = new EjercitoIngles();
+        int fuerza_inicial = ejercito.fuerza();
+        ejercito.entrenarCaballeros(10);
+        assert(ejercito.fuerza() == fuerza_inicial + 100);
     }
 
 }
