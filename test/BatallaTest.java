@@ -1,6 +1,5 @@
 import Modelo.Batalla;
 import Modelo.Ejercito.*;
-import Modelo.Unidad.UnidadPiquero;
 import org.junit.jupiter.api.Test;
 
 public class BatallaTest {
@@ -17,9 +16,9 @@ public class BatallaTest {
 
     @Test
     public void siUnEjercitoGanaUnaBatallaDeberiaPObtener100UnidadesExtraDeOro() {
-        int cantidad_inicial_de_oro = ejercito_fuerte.cantidadDeOroDisponible();
+        int cantidad_inicial_de_oro = ejercito_fuerte.oroDisponible();
         new Batalla(ejercito_debil, ejercito_fuerte);
-        assert(ejercito_fuerte.cantidadDeOroDisponible() == cantidad_inicial_de_oro + 100);
+        assert(ejercito_fuerte.oroDisponible() == cantidad_inicial_de_oro + 100);
     }
 
     @Test

@@ -3,6 +3,7 @@ package Modelo.Ejercito;
 import Modelo.Eliminador;
 import Modelo.Entrenador;
 import Modelo.Excepciones.TipoDeUnidadIntransformableException;
+import Modelo.ManejadorDeOro;
 import Modelo.Transformador;
 import Modelo.Unidad.Unidad;
 import Modelo.Unidad.UnidadArquero;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 
 public abstract class Ejercito {
-    protected int oro_disponible = 1000;
+    protected ManejadorDeOro manejador_de_oro = new ManejadorDeOro();
     protected ArrayList<UnidadPiquero> piqueros = new ArrayList<>();
     protected ArrayList<UnidadArquero> arqueros  = new ArrayList<>();
     protected ArrayList<UnidadCaballero> caballeros  = new ArrayList<>();
@@ -21,7 +22,7 @@ public abstract class Ejercito {
     protected Transformador transformador = new Transformador();
     protected Eliminador eliminador = new Eliminador(piqueros, arqueros, caballeros);
 
-    public int cantidadDeOroDisponible() { return oro_disponible;}
+    public int oroDisponible() { return manejador_de_oro.oroDisponible();}
 
     protected void agregarPiqueros(int cantidad) {
         for (int i = 0; i < cantidad; ++i) {
@@ -49,7 +50,7 @@ public abstract class Ejercito {
     }
 
     protected ArrayList<Unidad> unidades() {
-        ArrayList<Unidad> unidades = new ArrayList<Unidad>();
+        ArrayList<Unidad> unidades = new ArrayList<>();
         unidades.addAll(piqueros);
         unidades.addAll(arqueros);
         unidades.addAll(caballeros);
@@ -57,7 +58,7 @@ public abstract class Ejercito {
     }
 
     public void afrontarVictoria() {
-        oro_disponible += 100;
+        manejador_de_oro.ingresarOro(100);
     }
 
     public void afrontarDerrota() {

@@ -1,6 +1,5 @@
 import Modelo.Ejercito.*;
 import Modelo.Excepciones.TipoDeUnidadIntransformableException;
-import Modelo.Unidad.UnidadCaballero;
 import org.junit.jupiter.api.Test;
 
 public class EjercitoTest {
@@ -55,17 +54,17 @@ public class EjercitoTest {
 
     @Test
     public void elOroDisponibleDeUnEjercitoBizantinoRecienCreadoDeberiaSer1000() {
-        assert(ejercito_bizantino.cantidadDeOroDisponible() == 1000);
+        assert(ejercito_bizantino.oroDisponible() == 1000);
     }
 
     @Test
     public void elOroDisponibleDeUnEjercitoChinoRecienCreadoDeberiaSer1000() {
-        assert(ejercito_bizantino.cantidadDeOroDisponible() == 1000);
+        assert(ejercito_bizantino.oroDisponible() == 1000);
     }
 
     @Test
     public void elOroDisponibleDeUnEjercitoInglesRecienCreadoDeberiaSer1000() {
-        assert(ejercito_ingles.cantidadDeOroDisponible() == 1000);
+        assert(ejercito_ingles.oroDisponible() == 1000);
     }
 
     @Test
