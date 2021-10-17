@@ -35,4 +35,22 @@ public class JuegoTest {
         assert(juego.cantidadDeEjercitos() == 1);
         assert(juego.getEjercitoById(id_ejercito).getClass() == EjercitoIngles.class);
     }
+
+    @Test
+    public void SiUnEjercitoEntrenaSusUnidadesSeVuelveMasFuerte() {
+        int id_ejercito_1 = juego.crearEjercitoIngles();
+        int id_ejercito_2 = juego.crearEjercitoIngles();
+        juego.entrenarPiquerosParaEjercito(id_ejercito_2, 5);
+        int id_ganador = juego.enfrentarEjercitos(id_ejercito_1, id_ejercito_2);
+        assert(id_ganador == id_ejercito_2);
+    }
+
+    @Test
+    public void SiUnEjercitoTransformaSusUnidadesSeVuelveMasFuerte() {
+        int id_ejercito_1 = juego.crearEjercitoIngles();
+        int id_ejercito_2 = juego.crearEjercitoIngles();
+        juego.transformarPiquerosParaEjercito(id_ejercito_2, 5);
+        int id_ganador = juego.enfrentarEjercitos(id_ejercito_1, id_ejercito_2);
+        assert(id_ganador == id_ejercito_2);
+    }
 }

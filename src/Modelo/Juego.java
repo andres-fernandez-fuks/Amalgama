@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Juego {
     private final HashMap<Integer, Ejercito> ejercitos = new HashMap<>();
-    public int cantidadDeEjercitos() {return ejercitos.size(); }
+    public int cantidadDeEjercitos() { return ejercitos.size(); }
 
     public int agregarEjercito(Ejercito nuevo_ejercito) {
         int id_ejercito = nuevo_ejercito.getId();
@@ -62,10 +62,11 @@ public class Juego {
         ejercito.transformarCaballeros(cantidad);
     }
 
-    public void enfrentarEjercitos(int id_ejercito1, int id_ejercito2) {
+    public int enfrentarEjercitos(int id_ejercito1, int id_ejercito2) {
         Ejercito ejercito1 = ejercitos.get(id_ejercito1);
         Ejercito ejercito2 = ejercitos.get(id_ejercito2);
-        new Batalla(ejercito1, ejercito2);
+        Batalla batalla = new Batalla(ejercito1, ejercito2);
+        return batalla.ganador();
     }
 
 }
